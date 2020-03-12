@@ -1,0 +1,30 @@
+.tab {
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #282a36;
+  transition: all 1s ease-out;
+}
+
+.tab:hover {
+  color: white;
+  background-color: #44475a;
+  opacity: 0.7;
+}
+
+.selectedTab {
+  color: #6272a4;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 25px;
+  background-color: #44475a;
+  margin: 10px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
