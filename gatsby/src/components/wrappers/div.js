@@ -5,7 +5,7 @@ import style from "./wrappers.module.css"
 
 const Div = ({ children, color, size, text = "div" }) => {
   return (
-    <div style={{ fontSize: size }}>
+    <div style={{ fontSize: `${size}em` }}>
       <div className={style.tag} style={{ display: "inline-block" }}>
         <div className={style.div}>
           {"<"}

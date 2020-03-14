@@ -25,7 +25,7 @@ const Tabs = ({ title }) => {
     )
   })
   return (
-    <Flex style={{ padding: 10, height: 60 }} row justifyFlexStart alignCenter>
+    <Flex row justifyFlexStart alignCenter>
       {tabs}
     </Flex>
   )

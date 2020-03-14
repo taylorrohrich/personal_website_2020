@@ -1,15 +1,36 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import Flex from "./flex"
 import colors from "../../constants/colors"
 import style from "./wrappers.module.css"
 
-const Element = ({ children, onClick, color, size, comment }) => {
+const getLink = (to, children, color) => {
+  console.log(to)
+  if (to?.length) {
+    if (to.includes("https")) {
+      return (
+        <a style={{ color: color }} href={to}>
+          {children}{" "}
+        </a>
+      )
+    } else {
+      return (
+        <Link style={{ color: color }} to={to}>
+          {" "}
+          {children}
+        </Link>
+      )
+    }
+  }
+  return <div style={{ color: color }}>{children}</div>
+}
+const Element = ({ children, onClick, color, size, comment, to }) => {
   return (
     <div
       className={style.tag}
       style={{
-        fontSize: size,
+        fontSize: `${size}em`,
       }}
       role="button"
       onClick={onClick}
@@ -17,7 +38,7 @@ const Element = ({ children, onClick, color, size, comment }) => {
       <Flex row space-between className={style.div}>
         <Flex flex>
           {"<"}
-          <div style={{ color: colors[color] }}>{children}</div>
+          {getLink(to, children, colors[color])}
           {" />"}
         </Flex>
         {comment && (
