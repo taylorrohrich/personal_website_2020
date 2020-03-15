@@ -3,6 +3,8 @@ backend:
   branch: master
 media_folder: static/assets
 public_folder: /assets
+media_library:
+  name: netlify-large-media
 collections:
   - name: blog
     label: Blog
