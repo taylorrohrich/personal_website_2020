@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: master
-media_folder: static/assets
+media_folder: gatsby/static/assets
 public_folder: /assets
 collections:
   - name: blog
