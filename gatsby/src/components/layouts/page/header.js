@@ -7,7 +7,7 @@ import style from "./page.module.css"
 const tabNames = [
   { route: "", title: "Home" },
   { route: "about", title: "About" },
-  { route: "projects", title: "Projects" },
+  { route: "blog", title: "Blog" },
   { route: "contact", title: "Contact" },
 ]
 const Tabs = ({ title }) => {
@@ -33,7 +33,7 @@ const Tabs = ({ title }) => {
 
 const Header = ({ title }) => {
   return (
-    <header>
+    <header className={style.header}>
       <Tabs title={title} />
     </header>
   )

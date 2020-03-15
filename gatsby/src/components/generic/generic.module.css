@@ -1,0 +1,12 @@
+.jumbotronTitle {
+  font-size: 4em;
+  font-weight: bold;
+  color: #f8f8f2;
+  max-width: 800px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.jumbotronSubtitle {
+  font-size: 2em;
+  color: #f8f8f2;
+}

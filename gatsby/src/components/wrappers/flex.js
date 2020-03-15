@@ -75,7 +75,11 @@ const Flex = ({ children, style = {}, className, ...flexProps }) => {
   return (
     <div
       className={className}
-      style={{ display: "flex", ...flexStyle, ...style }}
+      style={{
+        display: flexProps.block ? "block" : "flex",
+        ...flexStyle,
+        ...style,
+      }}
     >
       {children}
     </div>

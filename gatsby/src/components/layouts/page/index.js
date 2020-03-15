@@ -7,7 +7,7 @@ import { SEO } from "../../generic"
 
 const Main = ({ children }) => <main>{children}</main>
 
-const Page = ({ children, title, location }) => {
+const Page = ({ children, title }) => {
   return (
     <Flex column style={{ height: "100%" }}>
       <SEO title={title} />

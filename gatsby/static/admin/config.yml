@@ -22,6 +22,25 @@ collections:
       - label: Featured Article
         name: isFeatured
         widget: boolean
+      - label: color
+        name: Color
+        widget: select
+        default: project
+        options:
+          - { label: Background, value: "#282a36" }
+          - { label: Current Line, value: "#44475a" }
+          - { label: Selection, value: "#44475a" }
+          - { label: Foreground, value: "#f8f8f2" }
+          - { label: Comment, value: "#6272a4" }
+          - { label: Cyan, value: "#8be9fd" }
+          - { label: Green, value: "#50fa7b" }
+          - { label: Orange, value: "#ffb86c" }
+          - { label: Pink, value: "#ff79c6" }
+          - { label: Purple, value: "#bd93f9" }
+          - { label: Red, value: "#ff5555" }
+          - { label: Yellow, value: "#f1fa8c" }
+          - { label: Dark Grey, value: "#303030" }
+          - { label: Blue, value: "#0072b1" }
       - label: Category
         name: category
         widget: select

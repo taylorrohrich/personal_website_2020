@@ -10,11 +10,7 @@ html {
   font-family: monospace;
   font-size: 16px;
 }
-header,
-main,
-footer {
-  margin: 10px;
-}
+
 a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
