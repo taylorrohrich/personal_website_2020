@@ -6,11 +6,33 @@ public_folder: /assets
 collections:
   - name: blog
     label: Blog
-    folder: blog
+    folder: static/blog
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: image, label: image, widget: image }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - label: Type
+        name: type
+        widget: hidden
+        default: blog
+      - label: Date
+        name: date
+        widget: datetime
+      - label: Title
+        name: title
+        widget: string
+      - label: Featured Article
+        name: isFeatured
+        widget: boolean
+      - label: Category
+        name: category
+        widget: select
+        default: project
+        options:
+          - { label: Project, value: project }
+          - { label: Personal, value: personal }
+          - { label: Random, value: random }
+      - label: Header Image
+        name: image
+        widget: image
+      - label: Content
+        name: body
+        widget: markdown
