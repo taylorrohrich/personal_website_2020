@@ -22,8 +22,8 @@ collections:
       - label: Featured Article
         name: isFeatured
         widget: boolean
-      - label: color
-        name: Color
+      - label: Color
+        name: color
         widget: select
         default: project
         options:
