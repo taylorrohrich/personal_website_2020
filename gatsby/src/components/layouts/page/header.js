@@ -1,5 +1,5 @@
-import { Link } from "gatsby"
 import React from "react"
+import { Link } from "gatsby"
 
 import { Flex } from "../../wrappers"
 import style from "./page.module.css"

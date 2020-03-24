@@ -5,16 +5,19 @@ import style from "./generic.module.css"
 
 const Jumbotron = ({ color, path, title, subtitle }) => {
   return (
-    <Flex style={{ backgroundColor: color, minHeight: 300 }}>
+    <Flex
+      className={style.jumbotronContainer}
+      style={{ backgroundColor: color }}
+    >
       <Flex column flex={3} alignCenter justifyCenter>
-        <div style={{ margin: 40 }}>
+        <div>
           <div className={style.jumbotronTitle}>{title}</div>
           <div className={style.jumbotronSubtitle}>{subtitle}</div>
         </div>
       </Flex>
       <Flex column flex={2} justifyCenter>
         <div>
-          <img style={{ height: 150 }} src={path} />
+          <img src={path} className={style.jumbotronImage} />
         </div>
       </Flex>
     </Flex>

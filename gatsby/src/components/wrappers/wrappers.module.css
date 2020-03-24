@@ -1,24 +1,42 @@
-.tag {
-  margin: 10px;
+.div {
   padding: 10px;
   padding-right: 20px;
   padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
   background-color: #44475a;
   border-radius: 10px;
   transition: all 1s;
 }
 
-.tag:hover {
-  margin: 20px;
+.div:hover {
+  margin-top: 30px;
+  margin-bottom: 30px;
   opacity: 0.5;
 }
 
-.div {
-  display: inline-block;
-  color: white;
-  background-color: #44475a;
+.indent {
+  margin-left: 40px;
 }
 
-.indent {
-  margin-left: 20px;
+.container {
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .div {
+    margin: 10px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .indent {
+    margin-left: 20px;
+  }
+
+  .container {
+    margin-bottom: 20px;
+  }
 }

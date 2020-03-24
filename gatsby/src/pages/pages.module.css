@@ -2,3 +2,29 @@
   max-width: 1600px;
   margin: auto;
 }
+
+.blogCardCollection {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.blogCardCollection div {
+  flex: 1;
+  max-width: 450px;
+}
+.index {
+  margin: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .index {
+    margin: 10px;
+  }
+  .blogCardCollection {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+}

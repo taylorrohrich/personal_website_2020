@@ -1,13 +1,19 @@
-.tab {
+.tab,
+.selectedTab {
   font-size: 1.8em;
   font-weight: bold;
   border-radius: 25px;
-  margin: 10px;
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
+  margin-right: 20px;
   color: #282a36;
   transition: all 1s ease-out;
+}
+
+.selectedTab {
+  background-color: #44475a;
+  color: #f8f8f2;
 }
 
 .tab:hover {
@@ -16,20 +22,18 @@
   opacity: 0.7;
 }
 
-.selectedTab {
-  color: #6272a4;
-  font-size: 1.8em;
-  font-weight: bold;
-  color: #f8f8f2;
-  border-radius: 25px;
-  background-color: #282a36;
-  margin: 10px;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
+.header {
+  margin: 20px;
 }
 
-.header {
-  margin-top: 20px;
-  margin-bottom: 20px;
+@media only screen and (max-width: 600px) {
+  .header {
+    margin: 10px;
+  }
+  .tab,
+  .selectedTab {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+  }
 }

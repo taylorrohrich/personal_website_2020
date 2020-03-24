@@ -15,7 +15,7 @@ const flexOptions = {
   },
   justifyContent: {
     justifyFlexStart: "flex-start",
-    justfyFlexEnd: "flex-end",
+    justifyFlexEnd: "flex-end",
     justifyCenter: "center",
     justifySpaceBetween: "space-between",
     justifySpaceAround: "space-around",
