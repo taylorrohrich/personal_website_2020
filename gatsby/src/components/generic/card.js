@@ -14,10 +14,10 @@ const Card = ({ path, color, title, subtitle, link, ...props }) => {
         >
           <img className={style.cardImage} src={path} />
         </div>
-        <Flex column className={style.cardContent} style={{ color }}>
+        <div className={style.cardContent} style={{ color }}>
           <div className={style.cardTitle}>{title}</div>
           <div className={style.cardSubtitle}>{subtitle}</div>
-        </Flex>
+        </div>
       </Link>
     </div>
   )

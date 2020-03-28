@@ -4,8 +4,7 @@
 }
 
 .blogCardCollection {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 20px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -23,8 +22,6 @@
     margin: 10px;
   }
   .blogCardCollection {
-    margin-top: 20px;
-    margin-bottom: 40px;
     justify-content: center;
   }
 }

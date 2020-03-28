@@ -2,6 +2,9 @@
   padding: 40px;
   min-height: 300px;
 }
+.jumbotronContent {
+  margin-right: 10px;
+}
 .jumbotronTitle {
   font-size: 4em;
   font-weight: bold;
@@ -25,6 +28,7 @@
 
 .navItem,
 .selectedNavItem {
+  font-size: 1.6em;
   cursor: pointer;
   padding: 20px;
   color: #f8f8f2;
@@ -42,7 +46,6 @@
 }
 
 .cardContainer {
-  margin: 20px;
   min-width: 300px;
   transition: all 1s;
 }
@@ -83,13 +86,14 @@
 @media only screen and (max-width: 600px) {
   .jumbotronContainer {
     padding: 10px;
-    min-height: 200px;
+    min-height: 400px;
   }
   .jumbotronImage {
     width: 100px;
     height: 100px;
   }
   .navContainer {
+    justify-content: space-evenly;
     background-color: #6272a4;
   }
   .navItem,

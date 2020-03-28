@@ -10,7 +10,7 @@ const Jumbotron = ({ color, path, title, subtitle }) => {
       style={{ backgroundColor: color }}
     >
       <Flex column flex={3} alignCenter justifyCenter>
-        <div>
+        <div className={style.jumbotronContent}>
           <div className={style.jumbotronTitle}>{title}</div>
           <div className={style.jumbotronSubtitle}>{subtitle}</div>
         </div>

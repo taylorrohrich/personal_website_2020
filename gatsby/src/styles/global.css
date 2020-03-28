@@ -39,9 +39,3 @@ a {
     font-size: 6px;
   }
 }
-
-@media only screen and (max-width: 400px) {
-  html {
-    font-size: 4px;
-  }
-}

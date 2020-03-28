@@ -7,12 +7,12 @@ import style from "./pages.module.css"
 const IndexPage = () => (
   <Page title="Home">
     <Flex column flex className={style.index}>
-      <Div size={3} color={"pink"} text="header">
+      <Div size={2} color={"pink"} text="header">
         <Element comment="That's me" color="orange" to="/about">
           Taylor Rohrich
         </Element>
       </Div>
-      <Div size={3} color={"pink"} text="main">
+      <Div size={2} color={"pink"} text="main">
         <Element color="green" to="https://github.com/taylorrohrich">
           Github
         </Element>

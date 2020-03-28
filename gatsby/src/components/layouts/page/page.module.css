@@ -6,7 +6,8 @@
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: #282a36;
   transition: all 1s ease-out;
 }
@@ -27,6 +28,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .tabContainer {
+    justify-content: space-evenly;
+  }
   .header {
     margin: 10px;
   }
@@ -34,6 +38,5 @@
   .selectedTab {
     padding-left: 10px;
     padding-right: 10px;
-    margin-right: 10px;
   }
 }
