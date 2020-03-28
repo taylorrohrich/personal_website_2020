@@ -1,13 +1,16 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import { Flex } from "../wrappers"
 import style from "./generic.module.css"
 
-const Jumbotron = ({ color, path, title, subtitle }) => {
+const Jumbotron = ({ color, path, title, subtitle, link }) => {
+  const Wrapper = link ? Link : Flex
   return (
-    <Flex
-      className={style.jumbotronContainer}
+    <Wrapper
+      className={link ? style.jumbotronContainerLink : style.jumbotronContainer}
       style={{ backgroundColor: color }}
+      to={link}
     >
       <Flex column flex={3} alignCenter justifyCenter>
         <div className={style.jumbotronContent}>
@@ -20,7 +23,7 @@ const Jumbotron = ({ color, path, title, subtitle }) => {
           <img src={path} className={style.jumbotronImage} />
         </div>
       </Flex>
-    </Flex>
+    </Wrapper>
   )
 }
 

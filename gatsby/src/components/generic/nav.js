@@ -4,8 +4,9 @@ import { Flex } from "../wrappers"
 import style from "./generic.module.css"
 
 const Nav = ({ color, items = [], onChange, selected, value }) => {
-  const navItems = items.map(item => (
+  const navItems = items.map((item, i) => (
     <div
+      key={`nav-${i}`}
       className={
         selected === item.value ? style.selectedNavItem : style.navItem
       }

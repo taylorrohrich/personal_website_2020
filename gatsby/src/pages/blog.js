@@ -14,12 +14,17 @@ const navItems = [
 ]
 const BlogPage = ({ data }) => {
   const [blogTab, setBlogTab] = useState(navItems[0].value)
-  const posts = data.allMarkdownRemark.edges.map(e => e.node.frontmatter)
+  const posts = data.allMarkdownRemark.edges.map(e => ({
+    ...e.node.frontmatter,
+    path: e.node.fields.path,
+  }))
   const featuredPost = posts.filter(p => p.isFeatured)?.[0]
-  const cards = posts.filter(p => p.category === blogTab)
-
+  const cards =
+    blogTab == "latest" ? posts : posts.filter(p => p.category === blogTab)
   const cardCollection = cards.map((card, i) => (
     <Card
+      key={`card-${i}`}
+      link={card.path}
       title={card.title}
       subtitle={card.category}
       path={card.image}
@@ -29,13 +34,14 @@ const BlogPage = ({ data }) => {
   return (
     <Page title="Blog">
       <Flex column className={style.blog}>
-        <Nav items={navItems} selected={blogTab} onChange={setBlogTab} />
         <Jumbotron
           title={featuredPost.title}
           subtitle={"Featured Article"}
           path={featuredPost.image}
           color={featuredPost.color}
+          link={featuredPost.path}
         />
+        <Nav items={navItems} selected={blogTab} onChange={setBlogTab} />
         <div className={style.blogCardCollection}>{cardCollection}</div>
       </Flex>
     </Page>
@@ -44,9 +50,12 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
+          fields {
+            path
+          }
           frontmatter {
             isFeatured
             type
