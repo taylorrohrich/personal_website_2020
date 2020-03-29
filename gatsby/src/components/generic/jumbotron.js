@@ -12,13 +12,13 @@ const Jumbotron = ({ color, path, title, subtitle, link }) => {
       style={{ backgroundColor: color }}
       to={link}
     >
-      <Flex column flex={3} alignCenter justifyCenter>
+      <Flex column flex={2} alignCenter justifyCenter>
         <div className={style.jumbotronContent}>
           <div className={style.jumbotronTitle}>{title}</div>
           <div className={style.jumbotronSubtitle}>{subtitle}</div>
         </div>
       </Flex>
-      <Flex column flex={2} justifyCenter>
+      <Flex column flex={1} alignCenter justifyCenter>
         <div>
           <img src={path} className={style.jumbotronImage} />
         </div>

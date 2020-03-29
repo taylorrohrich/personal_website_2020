@@ -3,19 +3,16 @@ type: blog
 date: 2020-03-28T17:50:41.700Z
 title: Test Article - Personal
 isFeatured: true
-color: '#ff79c6'
+color: "#282a36"
 category: personal
 image: /assets/screen-shot-2020-03-14-at-4.04.17-pm.png
 ---
+
 # **Loren Ipsum**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol**ore magna aliqua. Ipsum a arcu cursus vitae congue mauris. Mollis nunc sed id semper. Suspendisse faucibus interdum posuere lorem ipsum. Accumsan tortor posuere ac ut consequat semper viverra nam libero. Mattis vulputate enim nulla aliquet porttitor. Eros in cursus turpis ma**ssa. In pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Mi quis hendrerit dolor magna eget est lorem ipsum. Imperdiet sed euismod *nisi porta lorem mollis aliquam. Sed ulla*mcorper morbi tincidunt ornare massa eget egestas purus.
 
 ![](/assets/screen-shot-2020-03-15-at-2.49.44-pm.png)
-
-
-
-
 
 Porta nibh venenatis cras sed felis eget velit aliquet sagittis. Faucibus in ornare quam viverra orci sagittis eu volutpat. Vitae auctor eu augue ut lectus arcu bibendum. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Amet venenatis urna cursus eget nunc scelerisque viverra. Massa enim nec dui nunc mattis enim ut tellus elementum. Dui ut ornare lectus sit amet est placerat in. Elit pellentesque habitant morbi tristique senectus et netus. Enim sed faucibus turpis in. Mollis aliquam ut porttitor leo a diam. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Fusce ut placerat orci nulla pellentesque dignissim enim sit.
 

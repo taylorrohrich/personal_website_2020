@@ -1,22 +1,24 @@
 import React from "react"
 
 import { Flex } from "../wrappers"
+import Pill from "./pill"
 import style from "./generic.module.css"
 
-const Nav = ({ color, items = [], onChange, selected, value }) => {
+const Nav = ({ color, items = [], onChange, selected }) => {
   const navItems = items.map((item, i) => (
-    <div
+    <Pill
+      color={color}
+      title={item.name}
+      subtitle={item.subtitle}
       key={`nav-${i}`}
       className={
         selected === item.value ? style.selectedNavItem : style.navItem
       }
       onClick={() => onChange(item.value)}
-    >
-      {item.name}
-    </div>
+    />
   ))
   return (
-    <Flex className={style.navContainer} style={{ backgroundColor: color }}>
+    <Flex wrap className={style.navContainer}>
       {navItems}
     </Flex>
   )

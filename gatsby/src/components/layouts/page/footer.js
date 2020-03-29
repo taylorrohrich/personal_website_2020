@@ -1,7 +1,14 @@
 import React from "react"
-
+import style from "./page.module.css"
 const Footer = () => {
-  return <footer></footer>
+  const year = new Date().getFullYear()
+  return (
+    <footer>
+      <div className={style.footer}>
+        © Taylor Rohrich {year} | taylorrohrich@gmail.com
+      </div>
+    </footer>
+  )
 }
 
 export default Footer

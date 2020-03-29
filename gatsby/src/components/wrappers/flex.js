@@ -69,11 +69,12 @@ const getFlexStyle = flexProps => {
   return cleanObject(flexStyle)
 }
 
-const Flex = ({ children, style = {}, className, ...flexProps }) => {
+const Flex = ({ children, style = {}, className, onClick, ...flexProps }) => {
   const flexStyle = getFlexStyle(flexProps)
 
   return (
     <div
+      onClick={onClick}
       className={className}
       style={{
         display: flexProps.block ? "block" : "flex",

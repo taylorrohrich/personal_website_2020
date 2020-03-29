@@ -29,29 +29,26 @@
 }
 
 .navContainer {
-  background-color: #6272a4;
+  margin: 20px;
 }
 
 .navItem,
 .selectedNavItem {
-  font-size: 1.6em;
   cursor: pointer;
-  padding: 20px;
+  opacity: 0.7;
   color: #f8f8f2;
   font-weight: bold;
   transition: all 0.5s;
 }
 
-.selectedNavItem {
-  color: #282a36;
-}
-
+.selectedNavItem,
 .navItem:hover {
-  opacity: 0.7;
-  color: #282a36;
+  opacity: 1;
 }
 
 .cardContainer {
+  margin: 20px;
+  margin-top: 0px;
   min-width: 300px;
   transition: all 1s;
 }
@@ -85,8 +82,33 @@
   font-size: 18px;
 }
 .cardTitle {
+  color: #282a36;
   font-size: 24px;
   overflow: hidden;
+}
+
+.pillContainer {
+  color: #f8f8f2;
+  border-radius: 50px;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 10px;
+}
+
+.pillSubtitle {
+  font-size: 0.8em;
+}
+.pillTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.pillImageContainer {
+  margin-left: 30px;
+}
+.pillImage {
+  width: 30px;
+  height: 30px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -100,11 +122,19 @@
     height: 100px;
   }
   .navContainer {
-    justify-content: space-evenly;
-    background-color: #6272a4;
+    margin: 10px;
   }
-  .navItem,
-  .selectedNavItem {
-    padding: 10px;
+  .pillContainer {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .pillImageContainer {
+    margin-left: 15px;
+  }
+  .pillImage {
+    width: 15px;
+    height: 15px;
   }
 }

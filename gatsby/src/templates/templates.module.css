@@ -5,4 +5,25 @@
 
 .blogContent {
   margin: 20px;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+
+.blogContent p {
+  margin-left: auto;
+  margin-right: auto;
+}
+.blogContent img {
+  padding: auto;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.blogDate {
+  color: #f8f8f2;
+  padding: 20px;
+  font-size: 1.6em;
 }

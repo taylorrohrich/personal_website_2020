@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Page from "../components/layouts/page"
 import { Jumbotron, Nav, Card } from "../components/generic"
 import { Flex } from "../components/wrappers"
+import colors from "../constants/colors"
 import style from "./pages.module.css"
 
 const navItems = [
@@ -19,6 +20,18 @@ const BlogPage = ({ data }) => {
     path: e.node.fields.path,
   }))
   const featuredPost = posts.filter(p => p.isFeatured)?.[0]
+  const items = navItems.reduce((acc, item) => {
+    const categoryLength =
+      item.value === "latest"
+        ? posts.length
+        : posts.filter(p => p.category === item.value).length
+    return acc.concat({
+      ...item,
+      subtitle: categoryLength
+        ? `${categoryLength} article${categoryLength > 1 ? "s" : ""}`
+        : "no articles",
+    })
+  }, [])
   const cards =
     blogTab == "latest" ? posts : posts.filter(p => p.category === blogTab)
   const cardCollection = cards.map((card, i) => (
@@ -41,7 +54,12 @@ const BlogPage = ({ data }) => {
           color={featuredPost.color}
           link={featuredPost.path}
         />
-        <Nav items={navItems} selected={blogTab} onChange={setBlogTab} />
+        <Nav
+          items={items}
+          selected={blogTab}
+          onChange={setBlogTab}
+          color={colors.comment}
+        />
         <div className={style.blogCardCollection}>{cardCollection}</div>
       </Flex>
     </Page>

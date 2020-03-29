@@ -11,6 +11,7 @@ const Blog = ({ data }) => {
     ...data.markdownRemark.frontmatter,
     html: data.markdownRemark.html,
   }
+  const date = new Date(post.date).toDateString()
   return (
     <Page title={post.title}>
       <Flex column className={style.template}>
@@ -20,6 +21,13 @@ const Blog = ({ data }) => {
           path={post.image}
           color={post.color}
         />
+        <Flex
+          style={{ backgroundColor: post.color }}
+          className={style.blogDate}
+          justifyFlexEnd
+        >
+          <div>{date}</div>
+        </Flex>
         <div
           className={style.blogContent}
           dangerouslySetInnerHTML={{ __html: post.html }}

@@ -5,6 +5,9 @@ body,
   height: 100%;
   margin: 0;
 }
+main {
+  flex: 1;
+}
 html {
   background-color: #f8f8f2;
   font-family: monospace;
