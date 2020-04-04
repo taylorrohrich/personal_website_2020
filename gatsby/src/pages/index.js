@@ -1,6 +1,6 @@
 import React from "react"
 
-import Page from "../components/layouts/page"
+import { Page } from "../components/layouts"
 import { Flex, Div, Element } from "../components/wrappers"
 import style from "./pages.module.css"
 

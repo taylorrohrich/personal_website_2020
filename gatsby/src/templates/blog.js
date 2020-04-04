@@ -1,57 +1,55 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Jumbotron } from "../components/generic"
-import { Flex } from "../components/wrappers"
-import Page from "../components/layouts/page"
+import { Page, BlogPage } from "../components/layouts"
+import { Card } from "../components/generic"
+import { capitalizeFirstLetter } from "../utils"
 import style from "./templates.module.css"
 
-const Blog = ({ data }) => {
-  const post = {
-    ...data.markdownRemark.frontmatter,
-    html: data.markdownRemark.html,
-  }
-  const date = new Date(post.date).toDateString()
+const Blog = ({ data, pageContext }) => {
+  const category = pageContext.category
+  const posts = data.allMarkdownRemark.nodes.map(n => ({
+    ...n.frontmatter,
+    path: n.fields.path,
+  }))
+  const cardCollection = posts.map((card, i) => (
+    <Card
+      key={`card-${i}`}
+      link={card.path}
+      title={card.title}
+      subtitle={card.category}
+      path={card.image}
+      color={card.color}
+    />
+  ))
   return (
-    <Page title={post.title}>
-      <Flex column className={style.template}>
-        <Jumbotron
-          title={post.title}
-          subtitle={post.category}
-          path={post.image}
-          color={post.color}
-        />
-        <Flex
-          style={{ backgroundColor: post.color }}
-          className={style.blogDate}
-          justifyFlexEnd
-        >
-          <div>{date}</div>
-        </Flex>
-        <div
-          className={style.blogContent}
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </Flex>
+    <Page title={`Blog - ${capitalizeFirstLetter(category)}`}>
+      <BlogPage page={category}>
+        <div className={style.blogCardCollection}>{cardCollection}</div>
+      </BlogPage>
     </Page>
   )
 }
 
 export const query = graphql`
-  query($path: String!) {
-    markdownRemark(fields: { path: { eq: $path } }) {
-      frontmatter {
-        type
-        title
-        isFeatured
-        image
-        date
-        color
-        category
+  query($category: String!) {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: $category } } }
+    ) {
+      nodes {
+        frontmatter {
+          category
+          color
+          isFeatured
+          image
+          title
+          type
+        }
+        fields {
+          path
+        }
       }
-      html
     }
   }
 `
-
 export default Blog

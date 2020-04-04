@@ -42,13 +42,8 @@ collections:
           - { label: Dark Grey, value: "#303030" }
           - { label: Blue, value: "#0072b1" }
       - label: Category
-        name: category
-        widget: select
-        default: project
-        options:
-          - { label: Project, value: project }
-          - { label: Personal, value: personal }
-          - { label: Random, value: random }
+        name: title
+        widget: string
       - label: Header Image
         name: image
         widget: image

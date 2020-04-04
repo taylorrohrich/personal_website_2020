@@ -1,8 +1,21 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Flex } from "../wrappers"
+import { SEO } from "../generic"
+import style from "./layout.module.css"
 
-import { Flex } from "../../wrappers"
-import style from "./page.module.css"
+const Main = ({ children }) => <main>{children}</main>
+
+const Page = ({ children, title }) => {
+  return (
+    <Flex column style={{ height: "100%" }}>
+      <SEO title={title} />
+      <Header title={title} />
+      <Main children={children} />
+      <Footer />
+    </Flex>
+  )
+}
 
 const tabNames = [
   { route: "", title: "Home" },
@@ -39,4 +52,15 @@ const Header = ({ title }) => {
   )
 }
 
-export default Header
+const Footer = () => {
+  const year = new Date().getFullYear()
+  return (
+    <footer>
+      <div className={style.footer}>
+        © Taylor Rohrich {year} | taylorrohrich@gmail.com
+      </div>
+    </footer>
+  )
+}
+
+export default Page

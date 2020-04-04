@@ -3,7 +3,7 @@
   margin: auto;
 }
 
-.blogContent {
+.postContent {
   margin: 20px;
   margin-top: 0px;
   display: flex;
@@ -11,19 +11,37 @@
   font-size: 1.5em;
 }
 
-.blogContent p {
+.postContent p {
   margin-left: auto;
   margin-right: auto;
 }
-.blogContent img {
+.postContent img {
   padding: auto;
   max-width: 100%;
   height: auto;
   margin: auto;
 }
 
-.blogDate {
+.postDate {
   color: #f8f8f2;
   padding: 20px;
   font-size: 1.6em;
+}
+
+.blogCardCollection {
+  margin: 20px;
+  margin-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.blogCardCollection div {
+  flex: 1;
+  max-width: 450px;
+}
+
+@media only screen and (max-width: 600px) {
+  .blogCardCollection {
+    justify-content: center;
+  }
 }

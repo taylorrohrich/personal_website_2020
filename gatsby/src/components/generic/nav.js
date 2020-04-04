@@ -11,6 +11,7 @@ const Nav = ({ color, items = [], onChange, selected }) => {
       title={item.name}
       subtitle={item.subtitle}
       key={`nav-${i}`}
+      link={item.link}
       className={
         selected === item.value ? style.selectedNavItem : style.navItem
       }

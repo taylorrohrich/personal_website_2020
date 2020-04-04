@@ -1,16 +1,20 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
+  const postTemplate = path.resolve(`src/templates/post.js`)
   const blogTemplate = path.resolve(`src/templates/blog.js`)
   const result = await graphql(`
     query {
       allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              path
-            }
+        distinct(field: frontmatter___category)
+        nodes {
+          fields {
+            path
+          }
+          frontmatter {
+            category
           }
         }
       }
@@ -21,12 +25,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const path = node.fields.path
+  const { nodes, distinct } = result.data.allMarkdownRemark
+  nodes.forEach(node => {
+    const { path } = node.fields
+    createPage({
+      path,
+      component: postTemplate,
+      context: {}, // additional data can be passed via context
+    })
+  })
+  distinct.forEach(category => {
+    const path = `/blog/${category}`
     createPage({
       path,
       component: blogTemplate,
-      context: {}, // additional data can be passed via context
+      context: { category }, // additional data can be passed via context
     })
   })
 }
@@ -34,8 +47,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
-    const path = createFilePath({ node, getNode })
-
+    const filePath = createFilePath({ node, getNode })
+    const path = filePath.replace(
+      "/blog/",
+      `/blog/${node.frontmatter.category}/`
+    )
     createNodeField({
       node,
       name: `path`,
