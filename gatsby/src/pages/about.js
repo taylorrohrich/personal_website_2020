@@ -1,7 +1,12 @@
 import React from "react"
 
 import { Page } from "../components/layouts"
-
-const AboutPage = () => <Page title="About">About</Page>
+import { Timeline } from "../components/generic"
+const AboutPage = () => (
+  <Page title="About">
+    About
+    <Timeline />
+  </Page>
+)
 
 export default AboutPage

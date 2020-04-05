@@ -110,6 +110,34 @@
   width: 30px;
   height: 30px;
 }
+.timelineContentContainer {
+  margin-left: 20px;
+}
+.timelineContentDot {
+  background-color: #282a36;
+  border-radius: 25px;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 16px;
+}
+.timelineContentDate {
+  font-size: 2em;
+  font-weight: bold;
+}
+.timelineContentHeader {
+  margin-left: 6px;
+  padding-left: 20px;
+  border-color: #282a36;
+  border-width: 0px;
+  border-left-width: 6px;
+  border-style: solid;
+  font-size: 2em;
+}
+.timelineContentTitle {
+  font-style: italic;
+}
 
 @media only screen and (max-width: 600px) {
   .jumbotronContainer,

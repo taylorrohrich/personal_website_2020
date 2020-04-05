@@ -5,5 +5,6 @@ import Jumbotron from "./jumbotron"
 import Nav from "./nav"
 import Card from "./card"
 import Pill from "./pill"
+import Timeline from "./timeline"
 
-export { Element, SEO, Image, Jumbotron, Nav, Card, Pill }
+export { Element, SEO, Image, Jumbotron, Nav, Card, Pill, Timeline }

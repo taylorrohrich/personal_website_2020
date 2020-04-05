@@ -26,7 +26,6 @@ collections:
       - label: Color
         name: color
         widget: select
-        default: project
         options:
           - { label: Background, value: "#282a36" }
           - { label: Current Line, value: "#44475a" }
@@ -47,6 +46,81 @@ collections:
         widget: string
       - label: Header Image
         name: image
+        widget: image
+      - label: Content
+        name: body
+        widget: markdown
+  - name: skill
+    label: Skill
+    folder: gatsby/static/skill
+    create: true
+    fields:
+      - label: Type
+        name: type
+        widget: hidden
+        default: skill
+      - label: Title
+        name: title
+        widget: string
+      - label: Color
+        name: color
+        widget: select
+        options:
+          - { label: Background, value: "#282a36" }
+          - { label: Current Line, value: "#44475a" }
+          - { label: Selection, value: "#44475a" }
+          - { label: Foreground, value: "#f8f8f2" }
+          - { label: Comment, value: "#6272a4" }
+          - { label: Cyan, value: "#8be9fd" }
+          - { label: Green, value: "#50fa7b" }
+          - { label: Orange, value: "#ffb86c" }
+          - { label: Pink, value: "#ff79c6" }
+          - { label: Purple, value: "#bd93f9" }
+          - { label: Red, value: "#ff5555" }
+          - { label: Yellow, value: "#f1fa8c" }
+          - { label: Dark Grey, value: "#303030" }
+          - { label: Blue, value: "#0072b1" }
+      - label: Icon
+        name: icon
+        widget: image
+  - name: timeline
+    label: Timeline
+    folder: gatsby/static/timeline
+    create: true
+    fields:
+      - label: Type
+        name: type
+        widget: hidden
+        default: timeline
+      - label: Title
+        name: title
+        widget: string
+      - label: Start Date
+        name: startDate
+        widget: datetime
+      - label: End Date
+        name: endDate
+        widget: datetime
+      - label: Color
+        name: color
+        widget: select
+        options:
+          - { label: Background, value: "#282a36" }
+          - { label: Current Line, value: "#44475a" }
+          - { label: Selection, value: "#44475a" }
+          - { label: Foreground, value: "#f8f8f2" }
+          - { label: Comment, value: "#6272a4" }
+          - { label: Cyan, value: "#8be9fd" }
+          - { label: Green, value: "#50fa7b" }
+          - { label: Orange, value: "#ffb86c" }
+          - { label: Pink, value: "#ff79c6" }
+          - { label: Purple, value: "#bd93f9" }
+          - { label: Red, value: "#ff5555" }
+          - { label: Yellow, value: "#f1fa8c" }
+          - { label: Dark Grey, value: "#303030" }
+          - { label: Blue, value: "#0072b1" }
+      - label: Icon
+        name: icon
         widget: image
       - label: Content
         name: body
