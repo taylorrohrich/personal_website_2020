@@ -1,53 +1,68 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery } from "gatsby"
 
 import { Flex } from "../wrappers"
 import style from "./generic.module.css"
 
-const TimelineContent = ({ start, end, title, body }) => {
-  const date = `${start}${end ? "-" + end : ""}`
+const TimelineItem = ({ startDate, endDate, title, body, color, icon }) => {
+  const startYear = new Date(startDate).getFullYear()
+  const endYear = new Date(endDate).getFullYear()
+  const date = `${startYear}${endYear ? "-" + endYear : ""}`
   return (
-    <div className={style.timelineContentContainer}>
+    <div className={style.timelineContainer}>
       <Flex alignCenter>
-        <div className={style.timelineContentDot} />
-        <div className={style.timelineContentDate}>{date}</div>
+        <Flex
+          column
+          justifyCenter
+          alignCenter
+          style={{ backgroundColor: color }}
+          className={style.timelineDot}
+        >
+          {icon && <img className={style.timelineIcon} src={icon} />}
+        </Flex>
+        <div className={style.timelineDate}>{date}</div>
       </Flex>
-      <div className={style.timelineContentHeader}>
-        <div className={style.timelineContentTitle}>{title}</div>
-        {body}
+      <div className={style.timelineContent}>
+        <div className={style.timelineTitle}>{title}</div>
+        <div
+          className={style.timelineBody}
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
       </div>
     </div>
   )
 }
-const Timeline = ({ color, path, title, subtitle, link }) => {
-  return (
-    <div>
-      <TimelineContent
-        start="2016"
-        end="2017"
-        title={"University of Virginia"}
-        body={"The quick brown fox jumped over the lazy dog"}
-      />
-      <TimelineContent
-        start="2016"
-        end="2017"
-        title={"University of Virginia"}
-        body={"The quick brown fox jumped over the lazy dog"}
-      />
-      <TimelineContent
-        start="2016"
-        end="2017"
-        title={"University of Virginia"}
-        body={"The quick brown fox jumped over the lazy dog"}
-      />
-      <TimelineContent
-        start="2016"
-        end="2017"
-        title={"University of Virginia"}
-        body={"The quick brown fox jumped over the lazy dog"}
-      />
-    </div>
-  )
-}
 
+const Timeline = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "timeline" } } }) {
+        nodes {
+          frontmatter {
+            title
+            icon
+            endDate
+            startDate
+            color
+          }
+          html
+        }
+      }
+    }
+  `)
+  return data.allMarkdownRemark.nodes.map((n, i) => {
+    const { title, icon, startDate, endDate, color } = n.frontmatter
+    return (
+      <TimelineItem
+        key={`timelineItem-${i}`}
+        title={title}
+        icon={icon}
+        startDate={startDate}
+        endDate={endDate}
+        color={color}
+        body={n.html}
+      />
+    )
+  })
+}
 export default Timeline

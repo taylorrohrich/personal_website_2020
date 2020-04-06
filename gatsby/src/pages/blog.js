@@ -32,7 +32,7 @@ const Blog = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "blog" } } }) {
       nodes {
         frontmatter {
           category

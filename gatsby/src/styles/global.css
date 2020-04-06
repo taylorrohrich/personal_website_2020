@@ -6,7 +6,10 @@ body,
   margin: 0;
 }
 main {
+  max-width: 1600px;
+  width: 100%;
   flex: 1;
+  margin: auto;
 }
 html {
   background-color: #f8f8f2;

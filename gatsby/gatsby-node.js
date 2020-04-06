@@ -7,7 +7,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogTemplate = path.resolve(`src/templates/blog.js`)
   const result = await graphql(`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "blog" } } }) {
         distinct(field: frontmatter___category)
         nodes {
           fields {
@@ -46,7 +46,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
+  if (
+    node.internal.type === `MarkdownRemark` &&
+    node.frontmatter.type === "blog"
+  ) {
     const filePath = createFilePath({ node, getNode })
     const path = filePath.replace(
       "/blog/",

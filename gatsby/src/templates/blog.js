@@ -34,7 +34,9 @@ const Blog = ({ data, pageContext }) => {
 export const query = graphql`
   query($category: String!) {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: {
+        frontmatter: { type: { eq: "blog" }, category: { eq: $category } }
+      }
     ) {
       nodes {
         frontmatter {

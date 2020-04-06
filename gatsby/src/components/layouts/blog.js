@@ -5,7 +5,6 @@ import { Jumbotron, Nav } from "../../components/generic"
 import { Flex } from "../../components/wrappers"
 import colors from "../../constants/colors"
 import { capitalizeFirstLetter } from "../../utils"
-import style from "./layout.module.css"
 
 const getSubtitle = count =>
   count ? `${count} article${count > 1 ? "s" : ""}` : "no articles"
@@ -13,7 +12,7 @@ const getSubtitle = count =>
 const Blog = ({ children, page }) => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "blog" } } }) {
         distinct(field: frontmatter___category)
         nodes {
           frontmatter {
@@ -58,7 +57,7 @@ const Blog = ({ children, page }) => {
     })),
   ]
   return (
-    <Flex column className={style.blog}>
+    <Flex column>
       <Jumbotron
         title={featuredPost.title}
         subtitle={"Featured Article"}

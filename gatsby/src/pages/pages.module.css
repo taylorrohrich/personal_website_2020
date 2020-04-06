@@ -12,7 +12,13 @@
 .index {
   margin: 20px;
 }
-
+.aboutTitle {
+  color: #282a36;
+  font-weight: bold;
+  font-size: 4em;
+  text-align: center;
+  margin: 20px;
+}
 @media only screen and (max-width: 600px) {
   .index {
     margin: 10px;

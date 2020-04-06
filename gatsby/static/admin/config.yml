@@ -62,6 +62,9 @@ collections:
       - label: Title
         name: title
         widget: string
+      - label: Subtitle
+        name: subtitle
+        widget: string
       - label: Color
         name: color
         widget: select
