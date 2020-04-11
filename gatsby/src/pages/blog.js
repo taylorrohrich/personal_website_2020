@@ -22,7 +22,7 @@ const Blog = ({ data }) => {
     />
   ))
   return (
-    <Page title="Blog - Latest">
+    <Page title="Blog">
       <BlogPage page="latest">
         <div className={style.blogCardCollection}>{cardCollection}</div>
       </BlogPage>

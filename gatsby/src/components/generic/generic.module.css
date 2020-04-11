@@ -121,8 +121,8 @@
   border-radius: 25px;
   height: 36px;
   width: 36px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   margin-right: 16px;
 }
 .timelineIcon {
@@ -142,6 +142,7 @@
   border-style: solid;
 }
 .timelineTitle {
+  color: #282a36;
   font-style: italic;
   font-weight: bold;
   font-size: 1.5em;

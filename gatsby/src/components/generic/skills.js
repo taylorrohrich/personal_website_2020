@@ -3,7 +3,7 @@ import { useStaticQuery } from "gatsby"
 import { Flex } from "../wrappers"
 import Pill from "./pill"
 
-const Skills = () => {
+const Skills = ({ className }) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(filter: { frontmatter: { type: { eq: "skill" } } }) {
@@ -30,6 +30,10 @@ const Skills = () => {
       />
     )
   })
-  return <Flex wrap>{skills}</Flex>
+  return (
+    <Flex className={className} wrap>
+      {skills}
+    </Flex>
+  )
 }
 export default Skills

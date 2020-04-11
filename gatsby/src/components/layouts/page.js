@@ -19,9 +19,8 @@ const Page = ({ children, title }) => {
 
 const tabNames = [
   { route: "", title: "Home" },
-  { route: "about", title: "About" },
   { route: "blog", title: "Blog" },
-  { route: "contact", title: "Contact" },
+  { route: "about", title: "About" },
 ]
 const Tabs = ({ title }) => {
   const tabs = tabNames.map((t, i) => {

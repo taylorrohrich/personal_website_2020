@@ -33,7 +33,7 @@ const TimelineItem = ({ startDate, endDate, title, body, color, icon }) => {
   )
 }
 
-const Timeline = () => {
+const Timeline = ({ className }) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(filter: { frontmatter: { type: { eq: "timeline" } } }) {
@@ -50,7 +50,7 @@ const Timeline = () => {
       }
     }
   `)
-  return data.allMarkdownRemark.nodes.map((n, i) => {
+  const timelineItems = data.allMarkdownRemark.nodes.map((n, i) => {
     const { title, icon, startDate, endDate, color } = n.frontmatter
     return (
       <TimelineItem
@@ -64,5 +64,6 @@ const Timeline = () => {
       />
     )
   })
+  return <div className={className}>{timelineItems}</div>
 }
 export default Timeline
