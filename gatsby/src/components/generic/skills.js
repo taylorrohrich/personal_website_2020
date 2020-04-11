@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery } from "gatsby"
 import { Flex } from "../wrappers"
 import Pill from "./pill"
+import style from "./generic.module.css"
 
 const Skills = ({ className }) => {
   const data = useStaticQuery(graphql`
@@ -31,9 +32,11 @@ const Skills = ({ className }) => {
     )
   })
   return (
-    <Flex className={className} wrap>
-      {skills}
-    </Flex>
+    <div className={style.skillContainer}>
+      <Flex className={className} wrap>
+        {skills}
+      </Flex>
+    </div>
   )
 }
 export default Skills

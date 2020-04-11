@@ -22,6 +22,7 @@
   border-color: #ff79c6;
   font-weight: bold;
   font-size: 4em;
+  margin-left: 10px;
 }
 .aboutContent {
   margin: 20px;
@@ -32,9 +33,5 @@
   }
   .blogCardCollection {
     justify-content: center;
-  }
-  .aboutTitle {
-    margin: 10px;
-    border-left-width: 5px;
   }
 }

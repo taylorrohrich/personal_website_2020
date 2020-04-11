@@ -36,7 +36,10 @@ const TimelineItem = ({ startDate, endDate, title, body, color, icon }) => {
 const Timeline = ({ className }) => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { frontmatter: { type: { eq: "timeline" } } }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "timeline" } } }
+        sort: { fields: frontmatter___endDate, order: ASC }
+      ) {
         nodes {
           frontmatter {
             title
