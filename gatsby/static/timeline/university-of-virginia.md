@@ -2,7 +2,7 @@
 type: timeline
 title: University of Virginia - BA Major in Computer Science | BA Minor in Psychology
 startDate: 2016-02-29T17:46:48.656Z
-endDate: 2020-04-05T16:46:48.664Z
+endDate: 2019-12-02T17:46:48.664Z
 color: '#282a36'
 icon: /assets/cap.svg
 ---
