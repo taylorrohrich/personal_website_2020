@@ -102,6 +102,7 @@ collections:
       - label: Start Date
         name: startDate
         widget: datetime
+        required: false
       - label: End Date
         name: endDate
         widget: datetime
