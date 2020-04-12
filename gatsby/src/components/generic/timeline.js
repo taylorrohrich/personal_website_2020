@@ -5,9 +5,12 @@ import { Flex } from "../wrappers"
 import style from "./generic.module.css"
 
 const TimelineItem = ({ startDate, endDate, title, body, color, icon }) => {
-  const startYear = new Date(startDate).getFullYear()
-  const endYear = new Date(endDate).getFullYear()
-  const date = `${startYear}${endYear ? "-" + endYear : ""}`
+  const curYear = new Date().getFullYear()
+  const startYear = startDate && new Date(startDate).getFullYear()
+  const endYear = endDate && new Date(startDate).getFullYear()
+  const date = `${startYear ? startYear + " - " : ""}${
+    endYear == curYear && startDate ? "Present" : endYear
+  }`
   return (
     <div className={style.timelineContainer}>
       <Flex alignCenter>
