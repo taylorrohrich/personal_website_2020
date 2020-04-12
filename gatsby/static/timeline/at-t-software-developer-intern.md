@@ -1,7 +1,7 @@
 ---
 type: timeline
 title: AT&T - Software Developer Intern
-startDate: 2020-04-08T05:00:00.000Z
+startDate: ''
 endDate: 2019-08-02T16:40:34.474Z
 color: '#282a36'
 icon: /assets/briefcase.svg
