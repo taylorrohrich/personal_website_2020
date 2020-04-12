@@ -7,7 +7,7 @@ import style from "./generic.module.css"
 const TimelineItem = ({ startDate, endDate, title, body, color, icon }) => {
   const curYear = new Date().getFullYear()
   const startYear = startDate && new Date(startDate).getFullYear()
-  const endYear = endDate && new Date(startDate).getFullYear()
+  const endYear = endDate && new Date(endDate).getFullYear()
   const date = `${startYear ? startYear + " - " : ""}${
     endYear == curYear && startDate ? "Present" : endYear
   }`
