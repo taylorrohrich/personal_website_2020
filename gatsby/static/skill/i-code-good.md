@@ -1,6 +1,6 @@
 ---
 type: skill
-title: Javascript
+title: JavaScript
 subtitle: 4 years
 color: '#282a36'
 icon: ''
