@@ -1,6 +1,6 @@
 ---
 type: skill
-title: Python
+title: Git
 subtitle: 4 years
 color: '#282a36'
 ---
