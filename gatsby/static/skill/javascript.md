@@ -1,6 +1,6 @@
 ---
 type: skill
-title: Azure Cloud Services
-subtitle: 1 year
+title: React.js
+subtitle: 4 years
 color: '#282a36'
 ---
