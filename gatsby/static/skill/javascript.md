@@ -1,6 +1,6 @@
 ---
 type: skill
-title: JavaScript
-subtitle: 4 years
+title: Amazon Web Services
+subtitle: 1 year
 color: '#282a36'
 ---
