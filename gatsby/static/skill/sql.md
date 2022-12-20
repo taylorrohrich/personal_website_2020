@@ -1,6 +1,6 @@
 ---
 type: skill
 title: SQL
-subtitle: 4 years
+subtitle: 5 years
 color: '#282a36'
 ---
