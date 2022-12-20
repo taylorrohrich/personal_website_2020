@@ -1,6 +1,6 @@
 ---
 type: skill
 title: React
-subtitle: 4 years
+subtitle: 6 years
 color: '#282a36'
 ---
