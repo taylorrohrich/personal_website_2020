@@ -1,6 +1,6 @@
 ---
 type: skill
 title: React-Native
-subtitle: 3 years
+subtitle: 5 years
 color: '#282a36'
 ---
