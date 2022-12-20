@@ -6,4 +6,4 @@ endDate: 2021-04-30T01:23:43.285Z
 color: '#282a36'
 icon: /assets/cap.svg
 ---
-Incoming student for the 2020 Data Science Master's program at the University of Virginia.
+2﻿020 Graduate of University of Virginia's Master of Data Science Program. GPA: 4.0
